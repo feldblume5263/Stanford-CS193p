@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var body: some View {
+    var body: some View{
         ZStack(content: {
             RoundedRectangle(cornerRadius: 25.0)
                 .stroke(lineWidth: 3)
