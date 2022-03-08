@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚂", "🚀", "🚁", "🚜", "🚗", "🚄", "🚤", "🚲", "🚌", "🚑", "🚟", "🚔", "🛵", "🚕", "🚒", "🛴", "✈️", "🛸", "🚠", "🚚", "🏎", "⛵️", "🏍", "🚢"]
+    var vehicleEmojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
+    var fruitEmogis = ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝", "🍅"]
+    var flagEmogis = ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇯🇵", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩", "🇨🇮"]
     @State var emojiCount = 4
     
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                    ForEach(vehicleEmojis[0..<emojiCount], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -47,7 +49,7 @@ struct ContentView: View {
     
     var add: some View {
         Button {
-            if emojiCount < emojis.count {
+            if emojiCount < vehicleEmojis.count {
                 emojiCount += 1
             }
         } label: {
