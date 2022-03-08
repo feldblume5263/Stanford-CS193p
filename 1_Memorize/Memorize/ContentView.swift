@@ -18,9 +18,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("Memorize!")
+                .font(.largeTitle)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
-                    ForEach(emojis[emojiIndex].shuffled()[0..<emojiCount], id: \.self) { emoji in
+                    ForEach(emojis[emojiIndex].shuffled()[0..<emojis[emojiIndex].count], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -28,7 +30,6 @@ struct ContentView: View {
             .foregroundColor(.green)
             Spacer()
             HStack {
-                remove
                 Spacer()
                 themeA
                 Spacer()
@@ -36,7 +37,6 @@ struct ContentView: View {
                 Spacer()
                 themeC
                 Spacer()
-                add
             }
             .font(.largeTitle)
             .padding(.all)
@@ -77,9 +77,9 @@ struct ContentView: View {
         } label: {
             VStack {
                 Text("🚗")
-                    .font(.title)
+                    .font(.largeTitle)
                 Text("Vehicles")
-                    .font(.caption)
+                    .font(.body)
             }
         }
     }
@@ -93,9 +93,9 @@ struct ContentView: View {
         } label: {
             VStack {
                 Text("🍎")
-                    .font(.title)
+                    .font(.largeTitle)
                 Text("Fruits")
-                    .font(.caption)
+                    .font(.body)
             }
         }
     }
@@ -109,9 +109,9 @@ struct ContentView: View {
         } label: {
             VStack {
                 Text("🇰🇷")
-                    .font(.title)
+                    .font(.largeTitle)
                 Text("Flags")
-                    .font(.caption)
+                    .font(.body)
             }
         }
     }
