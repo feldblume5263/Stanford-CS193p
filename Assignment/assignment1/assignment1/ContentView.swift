@@ -31,51 +31,34 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                themeVehicles
+                ThemeButton(themeIcon: "🚗", themeName: "Vehicles", themeEmojis: $emogis, newTheme: vehicles)
                 Spacer()
-                themeFruits
+                ThemeButton(themeIcon: "🍎", themeName: "Fruits", themeEmojis: $emogis, newTheme: fruits)
                 Spacer()
-                themeFlags
+                ThemeButton(themeIcon: "🇰🇷", themeName: "Flags", themeEmojis: $emogis, newTheme: flags)
                 Spacer()
             }
             Spacer()
         }
         .padding(.horizontal)
     }
+}
+
+struct ThemeButton: View {
+    var themeIcon: String
+    var themeName: String
+    @Binding var themeEmojis: [String]
+    var newTheme: [String]
     
-    var themeVehicles: some View {
+    var body: some View {
         VStack {
-            Text("🚗")
+            Text(themeIcon)
                 .font(.largeTitle)
-            Text("Vehicles")
+            Text(themeName)
                 .font(.caption)
         }
         .onTapGesture {
-            emogis = vehicles.shuffled()
-        }
-    }
-    
-    var themeFruits: some View {
-        VStack {
-            Text("🍎")
-                .font(.largeTitle)
-            Text("Fruits")
-                .font(.caption)
-        }
-        .onTapGesture {
-            emogis = fruits.shuffled()
-        }
-    }
-    
-    var themeFlags: some View {
-        VStack {
-            Text("🇰🇷")
-                .font(.largeTitle)
-            Text("Flags")
-                .font(.caption)
-        }
-        .onTapGesture {
-            emogis = flags.shuffled()
+            themeEmojis = newTheme.shuffled()
         }
     }
 }
