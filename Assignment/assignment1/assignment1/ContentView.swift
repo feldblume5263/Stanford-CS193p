@@ -31,11 +31,11 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                ThemeButton(themeIcon: "🚗", themeName: "Vehicles", themeEmojis: $emogis, newTheme: vehicles)
+                ThemeButton(emojis: $emogis, themeIcon: "🚗", themeName: "Vehicles", newTheme: vehicles)
                 Spacer()
-                ThemeButton(themeIcon: "🍎", themeName: "Fruits", themeEmojis: $emogis, newTheme: fruits)
+                ThemeButton(emojis: $emogis, themeIcon: "🍎", themeName: "Fruits", newTheme: fruits)
                 Spacer()
-                ThemeButton(themeIcon: "🇰🇷", themeName: "Flags", themeEmojis: $emogis, newTheme: flags)
+                ThemeButton(emojis: $emogis, themeIcon: "🇰🇷", themeName: "Flags", newTheme: flags)
                 Spacer()
             }
             Spacer()
@@ -45,9 +45,9 @@ struct ContentView: View {
 }
 
 struct ThemeButton: View {
+    @Binding var emojis: [String]
     var themeIcon: String
     var themeName: String
-    @Binding var themeEmojis: [String]
     var newTheme: [String]
     
     var body: some View {
@@ -58,7 +58,7 @@ struct ThemeButton: View {
                 .font(.caption)
         }
         .onTapGesture {
-            themeEmojis = newTheme.shuffled()
+            emojis = newTheme.shuffled()
         }
     }
 }
