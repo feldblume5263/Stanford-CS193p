@@ -13,8 +13,8 @@
 [A review of the view protocol and body variable (the reason for using the some keyword)](https://hasensprung.tistory.com/129)<br/>
 ### Lecture 2
 [3 Ways to Increase View Readability (Splitting Views)](https://hasensprung.tistory.com/131)<br/>
-[A very shallow consideration for @State](https://hasensprung.tistory.com/85)
-[Why use \.self in ForEach and how to fix duplicate id problem](https://hasensprung.tistory.com/133)
+[A very shallow consideration for @State](https://hasensprung.tistory.com/85)<br/>
+[Why use \\.self in ForEach and how to fix duplicate id problem](https://hasensprung.tistory.com/133)<br/>
 <br/>
 
 ### Assignment1
