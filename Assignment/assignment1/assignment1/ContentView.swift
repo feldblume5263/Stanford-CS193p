@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let vehicles = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚", "🏍"]
     let fruits = ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝"]
-    let flags =  ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇯🇵", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"]
+    let flags =  ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇰🇷", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"]
     
     @State var emogis = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚",  "🏍"]
     
@@ -22,8 +22,8 @@ struct ContentView: View {
             Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 80.0))]) {
-                    ForEach(emogis, id: \.self) { emogi in
-                        CardView(content: emogi)
+                    ForEach(emogis.indices, id: \.self) { idx in
+                        CardView(content: emogis[idx])
                             .aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -58,7 +58,7 @@ struct ThemeButton: View {
                 .font(.caption)
         }
         .onTapGesture {
-            emojis = newTheme.shuffled()
+            emojis = newTheme//.shuffled()
         }
     }
 }
@@ -95,3 +95,5 @@ struct ContentView_Previews: PreviewProvider {
             .previewInterfaceOrientation(.portrait)
     }
 }
+
+
