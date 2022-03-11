@@ -19,6 +19,6 @@
 
 ### Assignment1
 [Document(English)](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf), [Document(Korean)](Assignment/assignment1.md)<br/>
-[Project Result](https://github.com/feldblume5263/Stanford-CS193p/tree/main/Assignment/assignment1)<br/>
+[Project Result](Assignment/assignment1/assignment1/ContentView.swift)<br/>
 
 
