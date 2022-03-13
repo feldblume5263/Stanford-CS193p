@@ -11,6 +11,8 @@
 
 ### Lecture 1
 [A review of the view protocol and body variable (the reason for using the some keyword)](https://hasensprung.tistory.com/129)<br/>
+<br/>
+
 ### Lecture 2
 [3 Ways to Increase View Readability (Splitting Views)](https://hasensprung.tistory.com/131)<br/>
 [A very shallow consideration for @State](https://hasensprung.tistory.com/85)<br/>
@@ -19,6 +21,9 @@
 
 ### Assignment1
 [Document(English)](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_1.pdf), [Document(Korean)](Assignment/assignment1.md)<br/>
-[Project Result](https://github.com/feldblume5263/Stanford-CS193p/tree/main/Assignment/assignment1)<br/>
+[Project Result](Assignment/assignment1/assignment1/ContentView.swift)<br/>
+<br/>
+
+### Lecture 3
 
 
