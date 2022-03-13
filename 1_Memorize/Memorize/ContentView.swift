@@ -8,21 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = [
-        ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"],
-        ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝", "🍅"],
-        ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇯🇵", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩", "🇨🇮"]
-    ]
-    @State var emojiIndex = 0
-    @State var emojiCount = 4
+    var emojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
+    @State var emojiCount = 15
     
     var body: some View {
         VStack {
-            Text("Memorize!")
-                .font(.largeTitle)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
-                    ForEach(emojis[emojiIndex].shuffled()[0..<emojis[emojiIndex].count], id: \.self) { emoji in
+                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -31,11 +24,9 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                themeA
+                remove
                 Spacer()
-                themeB
-                Spacer()
-                themeC
+                add
                 Spacer()
             }
             .font(.largeTitle)
@@ -58,60 +49,12 @@ struct ContentView: View {
     
     var add: some View {
         Button {
-            if emojiCount < emojis[emojiIndex].count {
+            if emojiCount < emojis.count {
                 emojiCount += 1
             }
         } label: {
             VStack {
                 Image(systemName: "plus.circle")
-            }
-        }
-    }
-    
-    var themeA: some View {
-        Button {
-            emojiIndex = 0
-            if emojiCount > emojis[emojiIndex].count {
-                emojiCount = emojis[emojiIndex].count
-            }
-        } label: {
-            VStack {
-                Text("🚗")
-                    .font(.largeTitle)
-                Text("Vehicles")
-                    .font(.body)
-            }
-        }
-    }
-    
-    var themeB: some View {
-        Button {
-            emojiIndex = 1
-            if emojiCount > emojis[emojiIndex].count {
-                emojiCount = emojis[emojiIndex].count
-            }
-        } label: {
-            VStack {
-                Text("🍎")
-                    .font(.largeTitle)
-                Text("Fruits")
-                    .font(.body)
-            }
-        }
-    }
-    
-    var themeC: some View {
-        Button {
-            emojiIndex = 2
-            if emojiCount > emojis[emojiIndex].count {
-                emojiCount = emojis[emojiIndex].count
-            }
-        } label: {
-            VStack {
-                Text("🇰🇷")
-                    .font(.largeTitle)
-                Text("Flags")
-                    .font(.body)
             }
         }
     }
