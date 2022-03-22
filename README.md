@@ -27,5 +27,12 @@
 ### Lecture 3
 [Basic concepts of Generics](https://hasensprung.tistory.com/142)<br/>
 [Handling Type Constraints of Generics](https://hasensprung.tistory.com/143)<br/>
+<br/>
 
+### Lecture 4
+
+<br/>
+### Assignment2
+[Document(English](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Reading%202.pdf), [Document(Korean)]()
+<br/>
 
