@@ -30,9 +30,9 @@
 <br/>
 
 ### Lecture 4
-
 <br/>
+
 ### Assignment2
-[Document(English](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Reading%202.pdf), [Document(Korean)]()
+[Document(English)](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Reading%202.pdf), [Document(Korean)](Assignment/assignment2.md)
 <br/>
 
