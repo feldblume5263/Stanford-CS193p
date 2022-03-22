@@ -25,5 +25,7 @@
 <br/>
 
 ### Lecture 3
+[Basic concepts of Generics](https://hasensprung.tistory.com/142)<br/>
+[Handling Type Constraints of Generics](https://hasensprung.tistory.com/143)<br/>
 
 
