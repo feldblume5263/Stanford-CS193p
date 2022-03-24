@@ -9,5 +9,18 @@ import Foundation
 
 class EmojiMemoryGame: ObservableObject {
     
-    //let model = MemoryGame<String>(numberOfPairOfCard: 4, createCardContent: <#T##(Int) -> String#>)
+    static let emojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
+    
+    // 매개변수로서의 함수 정리 필요..!
+    static func createMemoryGame() -> MemoryGame<String> {
+        return MemoryGame<String>(numberOfPairOfCard: 4) { pairIndex in
+            emojis[pairIndex]
+        }
+    }
+    
+    let model: MemoryGame<String> = createMemoryGame()
+    
+    var cards: [MemoryGame<String>.Card] {
+        return model.cards
+    }
 }

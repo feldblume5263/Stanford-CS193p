@@ -11,11 +11,12 @@ struct Theme {
     
 }
 
-struct MemoryGame<CardContent> {
+struct MemoryGame<CardContent> where CardContent: Equatable {
     
     var cards: Array<Card>
-    
+ 
     // 전형적인 예시
+    // 중요한건 pairIndex 변수가 어떻게 쓰이느냐...!!
     init(numberOfPairOfCard: Int, createCardContent: (Int) -> CardContent) {
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairOfCard {

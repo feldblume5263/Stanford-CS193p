@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Memorize!")
+            Text("Score : 0")
                 .font(.largeTitle)
                 .padding()
             Spacer()
@@ -29,15 +29,7 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            HStack {
-                Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🚗", themeName: "Vehicles", newTheme: vehicles)
-                Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🍎", themeName: "Fruits", newTheme: fruits)
-                Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🇰🇷", themeName: "Flags", newTheme: flags)
-                Spacer()
-            }
+            Text("New Game").font(.largeTitle).padding()
             Spacer()
         }
         .padding(.horizontal)
