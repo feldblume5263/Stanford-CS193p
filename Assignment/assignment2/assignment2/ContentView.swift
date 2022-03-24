@@ -30,7 +30,11 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            Text("New Game").font(.largeTitle).padding()
+            Button {
+                viewModel.setNewGame()
+            } label: {
+                Text("New Game").font(.largeTitle).padding()
+            }
             Spacer()
         }
         .padding(.horizontal)

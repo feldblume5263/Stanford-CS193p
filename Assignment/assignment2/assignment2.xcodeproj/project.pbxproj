@@ -13,6 +13,7 @@
 		AB71577727EC510E00B82904 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB71577427EC510E00B82904 /* MemoryGame.swift */; };
 		AB71577827EC510E00B82904 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB71577527EC510E00B82904 /* ContentView.swift */; };
 		AB71577927EC510E00B82904 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB71577627EC510E00B82904 /* EmojiMemoryGame.swift */; };
+		ABEDFD8D27ECAE2E00ADA500 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFD8C27ECAE2E00ADA500 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AB71577427EC510E00B82904 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		AB71577527EC510E00B82904 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB71577627EC510E00B82904 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		ABEDFD8C27ECAE2E00ADA500 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				AB71577527EC510E00B82904 /* ContentView.swift */,
 				AB71577627EC510E00B82904 /* EmojiMemoryGame.swift */,
 				AB71577427EC510E00B82904 /* MemoryGame.swift */,
+				ABEDFD8C27ECAE2E00ADA500 /* Theme.swift */,
 				AB71576A27EC507800B82904 /* Assets.xcassets */,
 				AB71576C27EC507800B82904 /* Preview Content */,
 			);
@@ -145,6 +148,7 @@
 			files = (
 				AB71577727EC510E00B82904 /* MemoryGame.swift in Sources */,
 				AB71576727EC507800B82904 /* Assignment2App.swift in Sources */,
+				ABEDFD8D27ECAE2E00ADA500 /* Theme.swift in Sources */,
 				AB71577827EC510E00B82904 /* ContentView.swift in Sources */,
 				AB71577927EC510E00B82904 /* EmojiMemoryGame.swift in Sources */,
 			);

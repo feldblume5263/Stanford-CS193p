@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct Theme {
-    
-}
-
 struct MemoryGame<CardContent> where CardContent: Equatable {
     
     var score: Int = 0

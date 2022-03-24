@@ -9,18 +9,37 @@ import Foundation
 
 class EmojiMemoryGame: ObservableObject {
     
-    static let emojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
+    static let defaultTheme = Theme(name: "vehicles",
+                                    emojis: ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"],
+                                    color: "yellow",
+                                    numberOfPairOfCard: 20)
+    static var themes: [Theme<String>] = [defaultTheme,
+                                          Theme(name: "fruits",
+                                                emojis: ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝"],
+                                                color: "blue",
+                                                numberOfPairOfCard: 20),
+                                          Theme(name: "Flags",
+                                                emojis: ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇰🇷", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"],
+                                                color: "red",
+                                                numberOfPairOfCard: 20)]
+    // 원래 6개를 해야 함 (이모지 추가 귀찮아...)
     
     // ****매개변수로서의 함수 정리 필요..!*****
-    static func createMemoryGame() -> MemoryGame<String> {
-        let shuffledEmojis = emojis.shuffled()
+    static func createMemoryGame(theme: Theme<String>) -> MemoryGame<String> {
+        let shuffledEmojis = theme.emojis.shuffled()
         return MemoryGame<String>(numberOfPairOfCard: 10) { pairIndex in
             pairIndex < shuffledEmojis.count ? shuffledEmojis[pairIndex] : nil
         }
     }
-    // ~ 여기까지가 model 생성
     
-    @Published private var model: MemoryGame<String> = createMemoryGame()
+    @Published private var model: MemoryGame<String> = createMemoryGame(theme: themes.first ??
+                                                                        Theme(name: "vehicles",
+                                                                              emojis: ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"],
+                                                                              color: "yellow",
+                                                                              numberOfPairOfCard: 20))
+    // ~ 여기까지가 game model 생성
+    
+    
     
     var score: Int {
         return model.score
@@ -32,5 +51,9 @@ class EmojiMemoryGame: ObservableObject {
     
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
+    }
+    
+    func setNewGame() {
+        model = EmojiMemoryGame.createMemoryGame(theme: EmojiMemoryGame.themes.randomElement() ?? EmojiMemoryGame.defaultTheme)
     }
 }
