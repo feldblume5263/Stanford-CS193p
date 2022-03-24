@@ -38,8 +38,7 @@ class EmojiMemoryGame: ObservableObject {
                                                                               color: "yellow",
                                                                               numberOfPairOfCard: 20))
     // ~ 여기까지가 game model 생성
-    
-    
+    var theme: Theme<String> = EmojiMemoryGame.themes.randomElement() ?? EmojiMemoryGame.defaultTheme
     
     var score: Int {
         return model.score
@@ -54,6 +53,7 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     func setNewGame() {
-        model = EmojiMemoryGame.createMemoryGame(theme: EmojiMemoryGame.themes.randomElement() ?? EmojiMemoryGame.defaultTheme)
+        theme = EmojiMemoryGame.themes.randomElement() ?? theme
+        model = EmojiMemoryGame.createMemoryGame(theme: theme)
     }
 }

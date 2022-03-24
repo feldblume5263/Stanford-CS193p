@@ -25,6 +25,7 @@ struct ContentView: View {
                             .onTapGesture {
                                 viewModel.choose(card: card)
                             }
+                            .foregroundColor(Color(wordName: viewModel.theme.color) ?? .black)
                             .opacity(card.isMatched ? 0.0 : 1)
                     }
                 }
@@ -59,7 +60,6 @@ struct CardView: View {
                     .fill()
             }
         }
-        .foregroundColor(.blue)
     }
 }
 
@@ -68,6 +68,21 @@ struct ContentView_Previews: PreviewProvider {
         let game = EmojiMemoryGame()
         ContentView(viewModel: game)
             .previewInterfaceOrientation(.portrait)
+    }
+}
+
+extension Color {
+    
+    init?(wordName: String) {
+        switch wordName {
+        case "red":         self = .red
+        case "green":       self = .green
+        case "blue":        self = .blue
+        case "orange":      self = .orange
+        case "yellow":      self = .yellow
+        case "purple":      self = .purple
+        default:            return nil
+        }
     }
 }
 
