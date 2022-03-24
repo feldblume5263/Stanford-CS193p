@@ -13,15 +13,18 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Score : 0")
+            Text("Score : \(viewModel.score)")
                 .font(.largeTitle)
                 .padding()
             Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 80.0))]) {
                     ForEach(viewModel.cards) { card in
-                        CardView(content: card.content)
+                        CardView(card: card)
                             .aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture {
+                                viewModel.choose(card: card)
+                            }
                     }
                 }
             }
@@ -33,38 +36,18 @@ struct ContentView: View {
     }
 }
 
-struct ThemeButton: View {
-    @Binding var emojis: [String]
-    var themeIcon: String
-    var themeName: String
-    var newTheme: [String]
-    
-    var body: some View {
-        VStack {
-            Text(themeIcon)
-                .font(.largeTitle)
-            Text(themeName)
-                .font(.caption)
-        }
-        .onTapGesture {
-            emojis = newTheme.shuffled()
-        }
-    }
-}
-
 struct CardView: View {
-    var content: String
-    @State var isFaceUp: Bool = true
+    let card: MemoryGame<String>.Card
     let cardShape = RoundedRectangle(cornerRadius: 20)
     
     var body: some View {
         ZStack {
-            if isFaceUp == true {
+            if card.isFaceUp == true {
                 cardShape
                     .fill().foregroundColor(.white)
                 cardShape
                     .strokeBorder(lineWidth: 3)
-                Text(content)
+                Text(card.content)
                     .font(.largeTitle)
             } else {
                 cardShape
@@ -72,9 +55,6 @@ struct CardView: View {
             }
         }
         .foregroundColor(.blue)
-        .onTapGesture {
-            isFaceUp.toggle()
-        }
     }
 }
 
