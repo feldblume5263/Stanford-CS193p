@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    let vehicles = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚", "🏍"]
-    let fruits = ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝"]
-    let flags =  ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇰🇷", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"]
+    static let vehicles = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚", "🏍"]
+    static let fruits = ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝"]
+    static let flags =  ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇰🇷", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"]
     
-    @State var emogis = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚",  "🏍"]
+    @State var emogis = vehicles
     
     var body: some View {
         VStack {
@@ -31,11 +31,11 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🚗", themeName: "Vehicles", newTheme: vehicles)
+                ThemeButton(emojis: $emogis, themeIcon: "🚗", themeName: "Vehicles", newTheme: ContentView.vehicles)
                 Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🍎", themeName: "Fruits", newTheme: fruits)
+                ThemeButton(emojis: $emogis, themeIcon: "🍎", themeName: "Fruits", newTheme: ContentView.fruits)
                 Spacer()
-                ThemeButton(emojis: $emogis, themeIcon: "🇰🇷", themeName: "Flags", newTheme: flags)
+                ThemeButton(emojis: $emogis, themeIcon: "🇰🇷", themeName: "Flags", newTheme: ContentView.flags)
                 Spacer()
             }
             Spacer()
@@ -58,7 +58,7 @@ struct ThemeButton: View {
                 .font(.caption)
         }
         .onTapGesture {
-            emojis = newTheme//.shuffled()
+            emojis = newTheme.shuffled()
         }
     }
 }

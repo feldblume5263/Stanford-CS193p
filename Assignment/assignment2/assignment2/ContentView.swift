@@ -25,6 +25,7 @@ struct ContentView: View {
                             .onTapGesture {
                                 viewModel.choose(card: card)
                             }
+                            .opacity(card.isMatched ? 0.0 : 1)
                     }
                 }
             }
@@ -38,7 +39,7 @@ struct ContentView: View {
 
 struct CardView: View {
     let card: MemoryGame<String>.Card
-    let cardShape = RoundedRectangle(cornerRadius: 20)
+    private let cardShape = RoundedRectangle(cornerRadius: 20)
     
     var body: some View {
         ZStack {
