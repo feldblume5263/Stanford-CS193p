@@ -21,8 +21,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairOfCard {
             let content: CardContent = createCardContent(pairIndex)
-            cards.append(Card(id: pairIndex * 2, Content: content))
-            cards.append(Card(id: pairIndex * 2 + 1, Content: content))
+            cards.append(Card(id: pairIndex * 2, content: content))
+            cards.append(Card(id: pairIndex * 2 + 1, content: content))
         }
     }
     
@@ -31,7 +31,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var id: Int
         var isFaceUp: Bool = false
         var isMatched: Bool = false
-        var Content: CardContent
+        var content: CardContent
         var isFlipped: Bool = false
     }
 //    // 이런식으로 Model을 전부??

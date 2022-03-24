@@ -17,8 +17,9 @@ class EmojiMemoryGame: ObservableObject {
             emojis[pairIndex]
         }
     }
+    // ~ 여기까지가 model 생성
     
-    let model: MemoryGame<String> = createMemoryGame()
+    @Published private var model: MemoryGame<String> = createMemoryGame()
     
     var cards: [MemoryGame<String>.Card] {
         return model.cards

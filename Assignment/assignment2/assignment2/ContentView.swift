@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let vehicles = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚", "🏍"]
-    let fruits = ["🍎", "🍋", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🥭", "🍍", "🥝"]
-    let flags =  ["🇰🇷", "🇩🇪", "🇺🇦", "🇺🇸", "🇫🇷", "🇪🇸", "🇰🇷", "🇨🇦", "🇰🇭", "🇮🇶", "🇬🇧", "🇮🇩"]
     
-    @State var emogis = ["🚂", "🚜", "🚗", "🚄", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🚚",  "🏍"]
+    @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
         VStack {
@@ -22,8 +19,8 @@ struct ContentView: View {
             Spacer()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 80.0))]) {
-                    ForEach(emogis.indices, id: \.self) { idx in
-                        CardView(content: emogis[idx])
+                    ForEach(viewModel.cards) { card in
+                        CardView(content: card.content)
                             .aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -83,7 +80,8 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let game = EmojiMemoryGame()
+        ContentView(viewModel: game)
             .previewInterfaceOrientation(.portrait)
     }
 }
