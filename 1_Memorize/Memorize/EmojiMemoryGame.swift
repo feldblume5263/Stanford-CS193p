@@ -8,7 +8,8 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    static let emojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
+    typealias Card = MemoryGame<String>.Card // typealias in viewmodel
+    private static let emojis = ["🚂", "🚜", "🚗", "🚄", "🚲", "🚌", "🚑", "🚔", "🛵", "🚕", "🚒", "🛴", "🚚", "🏎", "🏍"]
     
     // 이해가 잘  가지 않았던 부분: 왜 함수로 해야할까? 생성자를 그대로 쓰면 안되나??
     // <- 우리가 모델로 보내려는 함수: { pairIndex in emojis[pairIndex]
@@ -21,7 +22,7 @@ class EmojiMemoryGame: ObservableObject {
     
     @Published private var model: MemoryGame<String> = createMemoryGame()
     
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<Card> {
         return model.cards
     }
     
