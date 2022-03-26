@@ -33,6 +33,10 @@
 <br/>
 
 ### Assignment2
-[Document(English)](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Reading%202.pdf), [Document(Korean)](Assignment/assignment2.md)
+[Document(English)](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/Reading%202.pdf), [Document(Korean)](Assignment/assignment2.md)<br/>
+[project Result](https://github.com/feldblume5263/Stanford-CS193p/tree/main/Assignment/assignment2/assignment2) - [MemoryGame](Assignment/assignment2/assignment2/MemoryGame.swift), [Theme](Assignment/assignment2/assignment2/Theme.swift), [EmojiMememoryGame](Assignment/assignment2/assignment2/EmojiMemoryGame.swift), [ContentView](Assignment/assignment2/assignment2/ContentView.swift)
+<br/>
+
+### Lecture 5
 <br/>
 
