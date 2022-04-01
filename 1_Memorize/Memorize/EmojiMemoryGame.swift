@@ -15,7 +15,7 @@ class EmojiMemoryGame: ObservableObject {
     // <- 우리가 모델로 보내려는 함수: { pairIndex in emojis[pairIndex]
     // 쪼개서 만들어보면 이해가 빠를듯...
     static func createMemoryGame() -> MemoryGame<String> {
-        return MemoryGame<String>(numberOfPairsOfCards: 4) { pairIndex in
+        return MemoryGame<String>(numberOfPairsOfCards: 10) { pairIndex in
             emojis[pairIndex]
         }
     }
