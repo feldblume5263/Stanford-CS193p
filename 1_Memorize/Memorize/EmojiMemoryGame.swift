@@ -30,3 +30,28 @@ class EmojiMemoryGame: ObservableObject {
         model.choose(card)
     }
 }
+
+
+class NumMemoryGame: ObservableObject {
+    typealias Card = MemoryGame<Int>.Card // typealias in viewmodel
+    private static let emojis = [1, 2, 3, 4, 5]
+    
+    // 이해가 잘  가지 않았던 부분: 왜 함수로 해야할까? 생성자를 그대로 쓰면 안되나??
+    // <- 우리가 모델로 보내려는 함수: { pairIndex in emojis[pairIndex]
+    // 쪼개서 만들어보면 이해가 빠를듯...
+    static func createMemoryGame() -> MemoryGame<Int> {
+        return MemoryGame<Int>(numberOfPairsOfCards: 10) { pairIndex in
+            emojis[pairIndex]
+        }
+    }
+    
+    @Published private var model: MemoryGame<Int> = createMemoryGame()
+    
+    var cards: Array<Card> {
+        return model.cards
+    }
+    
+    func choose(_ card: MemoryGame<Int>.Card) {
+        model.choose(card)
+    }
+}
